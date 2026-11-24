@@ -1,0 +1,44 @@
+name: ROS 2 Humble build
+
+on:
+  push:
+    branches: [main, "feature/**", "fix/**"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  humble-build:
+    runs-on: ubuntu-22.04
+    container:
+      image: ros:humble-ros-base
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install build tools
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends \
+            python3-colcon-common-extensions \
+            python3-rosdep \
+            ros-humble-rosidl-default-generators \
+            ros-humble-rosidl-default-runtime \
+            ros-humble-rclpy \
+            ros-humble-std-msgs \
+            ros-humble-geometry-msgs \
+            ros-humble-builtin-interfaces \
+            ros-humble-ros2launch
+          rm -rf /var/lib/apt/lists/*
+
+      - name: Build workspace
+        shell: bash
+        run: |
+          source /opt/ros/humble/setup.bash
+          colcon build --event-handlers console_direct+
+
+      - name: Smoke import
+        shell: bash
+        run: |
+          source /opt/ros/humble/setup.bash
+          source install/setup.bash
+          python3 -c "from hr_balance_jetson.balance_outer import BalanceOuterNode; print('ok')"

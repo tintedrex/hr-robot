@@ -1,0 +1,27 @@
+# ROS 2 / colcon
+build/
+install/
+log/
+**/COLCON_IGNORE
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Secrets / local
+.env
+*.pem
+*.key
+
+# Docker
+*.log

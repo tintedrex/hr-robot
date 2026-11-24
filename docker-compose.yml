@@ -1,0 +1,18 @@
+services:
+  hr-dev:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: hr-robot:humble-dev
+    container_name: hr-robot-dev
+    working_dir: /ws
+    volumes:
+      - ./:/ws
+    environment:
+      - ROS_DOMAIN_ID=${ROS_DOMAIN_ID:-42}
+    stdin_open: true
+    tty: true
+    # Uncomment on Linux host for GUI / Gazebo later:
+    # network_mode: host
+    # devices:
+    #   - /dev/dri
