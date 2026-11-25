@@ -2,7 +2,15 @@
 
 Humanoid Robot (HR) software workspace — ROS 2 **Humble**, Jetson / real-time MCU / drives control stack.
 
-Software requirements: [`docs/HR-SRS-SW-v0.1.md`](docs/HR-SRS-SW-v0.1.md) (ISO/IEC/IEEE 29148).
+Engineering docs (current **v0.2**, baselined to HR-SRS-SYS):
+
+| Doc | Markdown | Word |
+| --- | --- | --- |
+| Software requirements | [`docs/HR-SRS-SW-v0.2.md`](docs/HR-SRS-SW-v0.2.md) | [`docs/HR-SRS-SW-v0.2.docx`](docs/HR-SRS-SW-v0.2.docx) |
+| Architecture | [`docs/HR-SAD-v0.2.md`](docs/HR-SAD-v0.2.md) | [`docs/HR-SAD-v0.2.docx`](docs/HR-SAD-v0.2.docx) |
+| Interfaces | [`docs/HR-ICD-v0.2.md`](docs/HR-ICD-v0.2.md) | [`docs/HR-ICD-v0.2.docx`](docs/HR-ICD-v0.2.docx) |
+| Test plan | [`docs/HR-TEST-SW-v0.2.md`](docs/HR-TEST-SW-v0.2.md) | [`docs/HR-TEST-SW-v0.2.docx`](docs/HR-TEST-SW-v0.2.docx) |
+| Safety | [`docs/HR-SAFE-v0.2.md`](docs/HR-SAFE-v0.2.md) | [`docs/HR-SAFE-v0.2.docx`](docs/HR-SAFE-v0.2.docx) |
 
 ## What you get
 
